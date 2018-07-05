@@ -34,10 +34,10 @@ kubectl create -f lab-2.yaml
 test $(kubectl get pods --no-headers mysql-client | wc -l) -eq 1
 test $(kubectl get pods --no-headers mysql-server | wc -l) -eq 1
 
-kubectl get pod -l role=server --output=jsonpath={.spec.containers[].resources.requests.cpu}
-kubectl get pod -l role=server --output=jsonpath={.spec.containers[].resources.requests.memory}
-kubectl get pod -l role=client --output=jsonpath={.spec.containers[].resources.requests.cpu}
-kubectl get pod -l role=client --output=jsonpath={.spec.containers[].resources.requests.memory}
+kubectl get pod -l role=server --output=jsonpath={.items.spec.containers[].resources.requests.cpu}
+kubectl get pod -l role=server --output=jsonpath={.items.spec.containers[].resources.requests.memory}
+kubectl get pod -l role=client --output=jsonpath={.items.spec.containers[].resources.requests.cpu}
+kubectl get pod -l role=client --output=jsonpath={.items.spec.containers[].resources.requests.memory}
 
 kubectl exec -ti mysql-client -- git clone https://github.com/andrewscat/kubelab.git kubelab
 kubectl exec -ti mysql-client -- sh -c 'echo -n $(date +%s) > value.txt'
