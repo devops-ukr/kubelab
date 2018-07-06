@@ -21,7 +21,7 @@ metadata:
 spec:
   containers:
   - name: nginx-1
-    image: butuzov/nginx:latest
+    image: docker.io/butuzov/nginx:latest
     ports:
       - containerPort: 8081
         name: nginx-1-port
@@ -77,7 +77,7 @@ metadata:
 spec:
   containers:
   - name: nginx-2
-    image: butuzov/nginx:latest
+    image: docker.io/butuzov/nginx:latest
     ports:
       - containerPort: 8082
         name: nginx-2-port

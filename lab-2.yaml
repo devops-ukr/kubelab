@@ -28,7 +28,7 @@ spec:
   terminationGracePeriodSeconds: 10
   containers:
   - name: mysql-server
-    image: mysql:5.7
+    image: docker.io/mysql:5.7
 
     # Ports
     ports:
@@ -61,7 +61,7 @@ spec:
 
   containers:
   - name: mysql-client
-    image: butuzov/mysql
+    image: docker.io/butuzov/mysql
     command: ["sleep"]
     args: ["3600"]
 

@@ -38,7 +38,7 @@ spec:
 
       containers:
       - name: nginx
-        image: butuzov/nginx:latest
+        image: docker.io/butuzov/nginx:latest
         ports:
           - containerPort: 80
         volumeMounts:
